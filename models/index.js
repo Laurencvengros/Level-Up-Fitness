@@ -18,4 +18,12 @@ Exercise.belongsTo(Routine, {
     foreignKey: 'routine_id'
 });
 
+User.hasMany(Exercise, {
+    foreignKey: 'user_id'
+});
+Exercise.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+
 module.exports = {User, Routine, Exercise};

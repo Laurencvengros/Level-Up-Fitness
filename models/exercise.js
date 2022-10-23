@@ -21,8 +21,16 @@ Exercise.init(
             allownull: false,
         },
         sets: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        user_id:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references:{
+                model: 'user',
+                key: 'id',
+            },
         },
         routine_id: {
             type: DataTypes.INTEGER,
