@@ -11,7 +11,7 @@ Routine.hasMany(Exercise, {
 });
 
 Routine.belongsTo(User, {
-    foreignKey: 'user'
+    foreignKey: 'user_id'
 });
 
 Exercise.belongsTo(Routine, {
