@@ -15,6 +15,6 @@ const routineData = [
     },
 ];
 
-const seedRoutine = () => Routine.bulkCreate(RoutineData);
+const seedRoutine = () => Routine.bulkCreate(routineData);
 
 module.exports = seedRoutine;
