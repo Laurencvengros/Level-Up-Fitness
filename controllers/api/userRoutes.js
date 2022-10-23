@@ -13,36 +13,30 @@ router.get ('/', async(req, res) => {
 });
 
 router.get('/:id', async (req,res)=>{
-    try{
-        const userData = await User.findOne({
-            where: {id: req.params.id},
-            attributes: {exclude:['password']},
-            include: [
-                {
-                    model: Routine,
-                    attributes: ['id', 'name', 'user_id', 'created_at'],
-                },
-                {
-                    model: Exercise,
-                    attributes: ['id', 'name', 'reps', 'sets', 'routine_id', 'created_at'],
-                    include:{ Routine,
-                    attributes: ['name']
-                    },
-                },
-                {
-                    model: Routine,
-                    attributes: ['name'],
-                },
-            ],
-        });
-        if(!userData){
-            res.status(404).json({message: 'user id does not exist'});
-            return;
-        }
-        res.sendStatus(200).json(userData);
-    }catch(err){
-        res.status(500).json(err);
-    }
+  try{
+  const userData = await User.findOne({
+    where: {id: req.params.id},
+    attributes: {exclude:['password']},
+    include: [
+      {
+        model: Routine,
+        attributes: ['id', 'name', 'user_id'],
+      },
+      {
+        model: Exercise,
+        attributes: ['id', 'name', 'reps', 'sets', 'routine_id'],
+        
+      },
+    ],
+  
+  });
+  res.status(200).json(userData);
+  }catch(err){
+    res.status(500).json(err);
+    
+  }
+
+    
 });
 
 router.post('/', async (req, res) => {
