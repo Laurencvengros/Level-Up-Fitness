@@ -1,6 +1,6 @@
 const User = require('./user');
 const Routine = require('./routine');
-const Exercise = require('./excercises');
+const Exercise = require('./exercise');
 
 User.hasMany(Routine, {
     foreignKey: 'user_id'

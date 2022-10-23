@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 
 const seedUser = require('./userData');
 const seedRoutine = require('./routineData');
-const seedExercises = require('./exercisesData');
+const seedExercise = require('./exerciseData');
 
 
 
@@ -17,7 +17,7 @@ const seedAll = async() => {
     await seedRoutine();
     console.log('\n---POST DATABASE SYNCED---\n');
 
-    await seedExercises();
+    await seedExercise();
     console.log('\n---COMMENT DATABASE SYNCED---\n');
 
     process.exit(0);

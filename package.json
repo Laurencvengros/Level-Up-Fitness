@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
   },
   "name": "project_2",
   "description": "\"\"",
@@ -19,11 +20,13 @@
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.25.3",
     "sqlite3": "^5.1.2"
-  }
+  },
+  "devDependencies": {}
 }
