@@ -27,11 +27,17 @@ const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.engine('handlebars', exphbs({
+  layoutsDir: __dirname + '/views',
+  }));
+  
+  
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+app.use(require('./controllers/'));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening on port' + PORT));
