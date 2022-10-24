@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Level Up Fitness</title>
+        <link rel = "stylesheet" href = "../../public/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
+        
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <a class="navbar-brand" href="/">Fitness Tracker</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        {{#if logged_in}}
+                            <a class="nav-link" href="/" id="logout">Logout [{{username}}]</a>
+                        {{else}}
+                            <a class="nav-link" href="login">Login</a>
+                        {{/if}}
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <header>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Level Up Fitness</h1>
+                    <p class="lead">A simpler way to track your progress</p>
+                </div>
+            </div>
+        </header>    
+        
+    </body>
+</html>
