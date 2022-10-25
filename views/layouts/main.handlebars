@@ -26,9 +26,11 @@
                     </li>
                     <li class="nav-item">
                         {{#if logged_in}}
-                    <li class="li-inline nav-item"><a href="/login">Login</a></li>
+                        <li class="li-inline nav-item"><a href="/" id="logout">Logout [{{name}}]</a></li>
+                    
                         {{else}}
-                    <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+                        <li class="li-inline nav-item"><a href="/login">Login</a></li>
+                    
                         {{/if}}
                     </li>
                 </ul>
@@ -37,6 +39,13 @@
     
         </header>    
         
+        <main>
         {{{body}}}
+        </main>
+
+        
     </body>
+     {{#if logged_in}}
+        <script src="/js/logout.js"></script>
+    {{/if}}
 </html>
