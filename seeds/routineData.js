@@ -4,6 +4,7 @@ const routineData = [
     {
        name: 'Upper Body',
        user_id: 1, 
+       
     },
     {
         name: 'Lower Body',

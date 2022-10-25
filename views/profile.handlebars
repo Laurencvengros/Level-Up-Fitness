@@ -1,8 +1,37 @@
 
 <article class="user">
-<h1>hello</h1>
-  
-  {{user.name}}
+<h1>hello, {{users.name}}</h1>
+<br>
+
+
+
+ {{#each users.routines}}
+
+ <h3>My Routines:</h3>
+ <br>
+ {{name}} :
+ 
+
+ 
+ {{/each}}
+ 
+
+ {{#each users.exercises}}
+
+<br>
+ {{name}}
+ <br>
+  Sets: {{sets}}
+
+ <br>
+  Reps: {{reps}}
+
+ 
+ {{/each}} 
+ 
+ 
+ 
+ 
   
 
 </article>
