@@ -3,19 +3,19 @@ const { Exercise, User, Routine } = require('../models');
 const router = require('express').Router();
 
 router.get('/login', (req, res) => {
-    res.render('login',{layout : 'login'});
+    res.render('login');
   });
 
 router.get('/signup', (req, res) => {
-    res.render('signup',{layout : 'signup'});
+    res.render('signup');
   });
 
   router.get('/', (req, res) => {
-    res.render('main',{layout : 'main'});
+    res.render('homePage');
   });
 
-  router.get('/profile', (req, res) => {
-    res.render('profile',{layout : 'profile'});
-  });
+  // router.get('/profile', (req, res) => {
+  //   res.render('profile');
+  // });
 
   module.exports = router;

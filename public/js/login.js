@@ -1,4 +1,5 @@
 async function loginFormHandler(event) {
+  console.log("logging in user")
     event.preventDefault();
   
     const email = document.querySelector('#email-login').value.trim();
@@ -6,14 +7,14 @@ async function loginFormHandler(event) {
 
     if (email && password) {
         const response = await fetch('/api/user/login', {
-          method: 'post',
+          method: 'POST',
           body: JSON.stringify({
             email,
             password,
           }),
           headers: { 'Content-Type': 'application/json' },
         });
-    
+        console.log(await response.json())
         if (response.ok) {
           document.location.replace('/profile');
           console.table(response);
@@ -24,3 +25,5 @@ async function loginFormHandler(event) {
     }
     
     document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+
+    console.log("testing login.js");
