@@ -27,9 +27,9 @@ const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.engine('handlebars', exphbs({
-  layoutsDir: __dirname + '/views',
-  }));
+// app.engine('handlebars', exphbs({
+//   layoutsDir: __dirname + '/views/layouts',
+//   }));
   
   
 app.use(express.json());
