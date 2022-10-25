@@ -2,6 +2,8 @@
 
 [Deployed Level Up Fitness App ](https://Laurencvengros.github.io/Project_2/ "Level Up Fitness")
 
+## User Story:
+
 ## Purpose:
 
 The purpose of this application is to simplify the process of working out
