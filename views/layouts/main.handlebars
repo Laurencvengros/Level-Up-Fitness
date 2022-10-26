@@ -25,13 +25,13 @@
                         <a class="nav-link" href="/profile">Profile</a>
                     </li>
                     <li class="nav-item">
-                        {{#if logged_in}}
-                        <li class="li-inline nav-item"><a href="/" id="logout">Logout [{{name}}]</a></li>
+                    {{#unless logged_in}}
+                    <li class="li-inline nav-item"><a href="/" id="logout">Logout [{{users.name}}]</a></li>
+                    {{/unless}}
                     
-                        {{else}}
-                        <li class="li-inline nav-item"><a href="/login">Login</a></li>
+                    <li class="li-inline nav-item"><a href="/login">Login</a></li>
                     
-                        {{/if}}
+                        
                     </li>
                 </ul>
             </div>
@@ -43,9 +43,11 @@
         {{{body}}}
         </main>
 
+        {{#if logged_in}}
+        <script src="/js/logout.js"></script>
+        {{/if}}
+
         
     </body>
-     {{#if logged_in}}
-        <script src="/js/logout.js"></script>
-    {{/if}}
+     
 </html>
