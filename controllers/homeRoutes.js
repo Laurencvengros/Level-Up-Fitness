@@ -14,6 +14,10 @@ router.get('/signup', (req, res) => {
     res.render('homePage');
   });
 
+  // router.get('/logout', (req,res) =>{
+  //   res.render('homePage');
+  // })
+
   // router.get('/profile', (req, res) => {
   //   res.render('profile');
   // });
