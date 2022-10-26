@@ -17,6 +17,7 @@ async function loginFormHandler(event) {
         console.log(await response.json())
         if (response.ok) {
           document.location.replace('/profile');
+          console.log("testing login.js");
           console.table(response);
         } else {
           alert('error');
