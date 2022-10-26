@@ -14,9 +14,9 @@ router.get('/signup', (req, res) => {
     res.render('homePage');
   });
 
-  // router.get('/logout', (req,res) =>{
-  //   res.render('homePage');
-  // })
+  router.get('/dashboard', (req,res) =>{
+    res.render('addRoutine');
+  })
 
   // router.get('/profile', (req, res) => {
   //   res.render('profile');
