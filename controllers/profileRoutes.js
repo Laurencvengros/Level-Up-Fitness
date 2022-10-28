@@ -3,6 +3,7 @@ const { Exercise, User, Routine } = require('../models');
 // const withAuth = require('../utils/auth');
 const router = require('express').Router();
 
+
 router.get('/', (req, res) => {
   Routine.findAll({
     where: {
@@ -37,6 +38,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 
 
 

@@ -1,28 +1,43 @@
-  <div id=" exerciseData" data-id="{{routine.id}}"></div>
+{{!-- <div id=" exerciseData" data-id="{{routine.id}}"></div> --}}
   
-  
+  <input type="hidden" id="routine_id" value="{{routine.id}}"/>
+<div>
+  <h3 class="card-header">Create a new Exercise</h3>
+  <form id="exercise-form">
+      <div class="form-group">
+          
+              <label for="exampleInputName"   class="form-label">Name</label>
+        <input class="form-control" id="exercise-name" name="exercise-name" class="form-input" />
+              <label for="exampleInputName" class="form-label">Sets</label>
+        <input class="form-control" id="exercise-sets" name="exercise-sets" class="form-input" />
+              <label for="exampleInputName" class="form-label">Reps</label>
+        <input class="form-control" id="exercise-reps" name="exercise-reps" class="form-input" />
+              
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg">Add</button>
   </form>
-         <h3 class="card-header">Create a new Exercise</h3>
-        <form id="exercise-form">
-            <div class="form-group">
-                <label for="exampleInputName" for="exercise-name" id=" exercise-name">Name</label>
-                <input type="text" class="form-control" id="exercise-name" autofocus="true" class
-                    aria-describedby="name">
-                    <label for="exampleInputName" for="exercise-reps" id=" exercise-reps">Reps</label>
-                <input type="text" class="form-control" id="exercise-name" autofocus="true" class
-                    aria-describedby="name">
-                    <label for="exampleInputName" for="exercise-sets" id=" exercise-sets">Sets</label>
-                <input type="text" class="form-control" id="exercise-name" autofocus="true" class
-                    aria-describedby="name">
-                    <button type="submit" class="btn btn-primary btn-lg">Add</button>
-            </div>
-            <p>{{#each exercises}}
-        {{name}}
-        {{reps}}
-        {{sets}}
-        {{/each}}
-       </p> 
+  <div class="card">
+    <h5 class="card-header"></h5>
+    <div class="card-body">
+      <h5 class="card-title">{{routine.name}}</h5>
+      <p class="card-text">
+        
             
+              {{!-- <h1>{{routine.exercises.name}}</h1> --}}
+              {{#each routine.exercises}}
+              {{name}}
+                <ul>
+                  {{!-- <li>{{name}}</li> --}}
+                  <li>Sets: {{sets}}</li>
+                  <li>Reps: {{reps}}</li>
+                </ul>
+              {{/each}}
             
+          
+        </p> 
+      
+    </div>
+  </div>
+</div>
 
-        </form>
+<script src="../../js/addExercise.js"></script>
