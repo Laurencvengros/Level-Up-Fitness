@@ -1,15 +1,23 @@
+{{#if routines.length}}
+<section>
+    <h2>Your routines</h2>
+    {{#each routines as |routine|}}
+    {{> profile-info routine}}
+    {{/each}}
 
-<article class="user">
-<h1>hello, {{users.name}}</h1>
-<br>
+</section>
+{{/if}}
+{{!-- 
+</article>
 
-
+        <h1>Hello, {{users.name}}</h1>
+    </div>
+    <br>
+ <h5>My Routines:</h5>
 
  {{#each users.routines}}
-
- <h3>My Routines:</h3>
  <br>
- {{name}} :
+ {{name}} 
  
 
  
@@ -29,9 +37,15 @@
  
  {{/each}} 
  
- 
- 
- 
-  
+</article> --}}
+<article>
+
 
 </article>
+
+
+
+ 
+
+  
+

@@ -1,25 +1,56 @@
 const sequelize = require('../config/connection');
 const { Exercise, User, Routine } = require('../models');
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 
 router.get('/login', (req, res) => {
-    res.render('login');
-  });
+  res.render('login');
+});
+
 
 router.get('/signup', (req, res) => {
-    res.render('signup');
-  });
+  res.render('signup');
+});
 
-  router.get('/', (req, res) => {
-    res.render('homePage');
-  });
 
-  router.get('/dashboard', (req,res) =>{
-    res.render('addRoutine');
-  })
+router.get('/routine/:id', async (req, res) => {
+  try {
+    const routineData = await Routine.findOne({
+      where: { id: req.params.id },
 
-  // router.get('/profile', (req, res) => {
-  //   res.render('profile');
-  // });
+      include: [
+        {
+          model: Exercise,
+          attributes: ['id', 'name', 'reps', 'sets', 'routine_id'],
+          include: {
+            model: User,
+            attributes: ['name']
+          }
+        }
 
-  module.exports = router;
+      ],
+
+    });
+    const routine = routineData.get({plain: true})
+    console.log(routine);
+    res.render('routines', {routine, logged_in: req.session.logged_in,})
+  } catch (err) {
+    res.status(500).json(err);
+
+  }
+
+
+});
+
+
+
+// router.get('/dashboard', withAuth, (req,res) =>{
+//   res.render('dashboard');
+// });
+
+// router.get('/profile', (req,res) =>{
+//   res.render('profile');
+// });
+
+
+module.exports = router;
