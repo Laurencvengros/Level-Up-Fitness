@@ -2,6 +2,7 @@ const newRoutineForm= async function(event){
     event.preventDefault();
 
     routineTitle = document.querySelector(("#routine-name")).value.trim();
+    
     console.log(routineTitle)
 
     
@@ -20,7 +21,7 @@ const newRoutineForm= async function(event){
         console.log(response);
         if (response.ok) {
             console.log('test')
-            
+            window.location.replace("profile")
    
         } else {
             console.log(routineTitle)
@@ -33,3 +34,6 @@ const newRoutineForm= async function(event){
 
 
 document.querySelector('#routine-form').addEventListener('submit', newRoutineForm);
+
+
+

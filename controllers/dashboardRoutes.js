@@ -53,8 +53,6 @@ router.get('/edit/:id',  (req, res) => {
 
 });
 
-router.get('/new', (req, res) => {
-  res.render('new-routine', { username: req.session.name });
-});
+
 
 module.exports = router;

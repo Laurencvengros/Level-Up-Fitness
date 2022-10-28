@@ -12,6 +12,9 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/', (req, res) => {
+  res.render('dashboard');
+});
 
 router.get('/routine/:id', async (req, res) => {
   try {
@@ -42,15 +45,36 @@ router.get('/routine/:id', async (req, res) => {
 
 });
 
+router.get('/exercise/:id', async (req, res) => {
+  try {
+    const exerciseData = await Exercise.findOne({
+      where: { id: req.params.id },
+
+      include: [
+        {
+          model: Routine,
+          attributes: [ 'name'],
+        },
+        {
+        
+            model: User,
+            attributes: ['name']
+        }
+      ],
+
+    });
+    const exercise = exerciseData.get({plain: true})
+    console.log(exercise);
+    res.render('routines', {exercisee, logged_in: req.session.logged_in,})
+  } catch (err) {
+    res.status(500).json(err);
+
+  }
 
 
-// router.get('/dashboard', withAuth, (req,res) =>{
-//   res.render('dashboard');
-// });
+});
 
-// router.get('/profile', (req,res) =>{
-//   res.render('profile');
-// });
+
 
 
 module.exports = router;
