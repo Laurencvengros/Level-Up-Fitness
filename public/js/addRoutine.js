@@ -36,4 +36,3 @@ const newRoutineForm= async function(event){
 document.querySelector('#routine-form').addEventListener('submit', newRoutineForm);
 
 
-
