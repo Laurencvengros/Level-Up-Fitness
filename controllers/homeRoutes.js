@@ -65,7 +65,7 @@ router.get('/exercise/:id', async (req, res) => {
     });
     const exercise = exerciseData.get({plain: true})
     console.log(exercise);
-    res.render('routines', {exercisee, logged_in: req.session.logged_in,})
+    res.render('routines', {exercise, logged_in: req.session.logged_in,})
   } catch (err) {
     res.status(500).json(err);
 

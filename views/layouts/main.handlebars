@@ -26,7 +26,7 @@
                     </li>
                     <li class="nav-item">
                     {{#if logged_in}}
-                    <li class="li-inline nav-item"><a href="/" id="logout">Logout [{{user.name}}]</a></li>
+                    <li class="li-inline nav-item"><a href="/" id="logout">Logout [{{name}}]</a></li>
                     {{else}}
                     
                     <li class="li-inline nav-item"><a href="/login">Login</a></li>
@@ -42,15 +42,22 @@
         <main>
         {{{body}}}
         </main>
-
+        
         {{#unless req.session.logged_in}}
         <script src="/js/logout.js"></script>
         {{/unless}}
 
         
 
-
+    
         
     </body>
      
 </html>
+
+
+        
+
+
+        
+   
