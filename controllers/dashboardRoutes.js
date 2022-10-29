@@ -16,10 +16,13 @@ router.get('/', async (req,res)=>{
     ],
     
   })
-  
+  if(!routineData){
+    res.render('dashboard')
+  }else{
   const routine = routineData.get({plain : true});
   console.log(routine)
   res.render('dashboard', { routine });
+  }
  
 });
 
