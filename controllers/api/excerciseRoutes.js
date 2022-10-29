@@ -41,62 +41,40 @@ router.get('/:id', async (req, res) => {
 });
 
 
-router.put('/:id', async (req, res) => {
-  try {
-    console.log('here is the req.body', req.body);
-    const [affectedRows] = await Exercise.update(req.body, {
-      where: {
-        id: req.params.id,
+router.put('/:id', async(req,res)=>{
+  try{
+    const updateExercise = await Exercise.update(
+      {
+        name: req.body.name,
+        sets: req.body.sets,
+        reps: req.body.reps,
       },
-    });
-
-    if (affectedRows > 0) {
-      res.status(200).end();
-    } else {
-      res.status(404).end();
+      {
+        where: {
+          id: req.params.id,
+        },
+      },
+    );
+    if(!updateExercise){
+      res.status(404).json({message: 'no exercise with that id'});
+      return;
     }
-  } catch (err) {
+    res.json(updateExercise);
+  }catch(err){
     res.status(500).json(err);
   }
 });
 
+router.get ('/', async(req, res) => {
+  try{
+      const exerciseData = await Exercise.findAll({
+          
+      });
+      res.status(200).json(exerciseData);
+  } catch(err){
+      res.status(500).json(err);
+  }
+});
 
-// router.get ('/', async(req, res) => {
-//     try{
-//         const exerciseData = await Exercise.findAll({
-            
-//         });
-//         res.status(200).json(exerciseData);
-//     } catch(err){
-//         res.status(500).json(err);
-//     }
-// });
-
-// router.get('/:id', async (req,res)=>{
-//     try{
-//     const exerciseData = await Exercise.findOne({
-//       where: {id: req.params.id},
-
-//       include: [
-//         {
-//           model: Routine,
-//           attributes: [ 'name'],
-//         },
-//         {
-        
-//             model: User,
-//             attributes: ['name']
-//         }
-//       ],
-    
-//     });
-//     res.status(200).json(exerciseData);
-//     }catch(err){
-//       res.status(500).json(err);
-      
-//     }
-  
-      
-//   });
 
   module.exports = router;
