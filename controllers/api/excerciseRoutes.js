@@ -76,5 +76,23 @@ router.get ('/', async(req, res) => {
   }
 });
 
+router.delete('/:id', async(req,res) =>{
+  try{
+    const deleteExercise = await Exercise.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+    if(!deleteExercise){
+      res.status(404).json({message: 'no exercise to delete'});
+      return;
+    }
+    res.status(200).json(deleteExercise);
+  }catch(err){
+    res.status(500).json(err);
+  }
+});
+
 
   module.exports = router;
