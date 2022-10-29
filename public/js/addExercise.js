@@ -46,28 +46,4 @@ const newExerciseForm= async function(event){
 
 document.querySelector('#exercise-form').addEventListener('submit', newExerciseForm);
 
-async function deleteFormHandler(event) {
-    event.preventDefault();
-  
-    const id =  document.querySelector('#routine_id').value;
-    
-  
-    const response = await fetch(`/api/exercise/${id}`, {
-      method: 'DELETE',
-      body: JSON.stringify({
-        exercise_id: id,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-  
-    if (response.ok) {
-        document.location.reload();
-    } else {
-      alert(response.statusText);
-    }
-  }
-  
-  document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
 
