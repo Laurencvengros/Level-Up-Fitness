@@ -1,3 +1,4 @@
+
 const newExerciseForm= async function(event){
     event.preventDefault();
 
@@ -43,7 +44,6 @@ const newExerciseForm= async function(event){
     
 };
 
-
-
 document.querySelector('#exercise-form').addEventListener('submit', newExerciseForm);
+
 

@@ -40,6 +40,46 @@ router.get('/', (req, res) => {
 });
 
 
+router.get('/edit/:id',  (req, res) => {
+  Exercise.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ['id', 'name', 'reps', 'sets'],
+    include: [
+      {
+        model: User,
+        attributes: ['name'],
+      },
+      {
+        model: Routine,
+        attributes: ['id', 'name'],
+        include: {
+          model: User,
+          attributes: ['name'],
+        },
+      },
+    ],
+  })
+  .then((exerciseData) =>{
+    if(!exerciseData){
+      res.status(404).json({message: 'no exercise found with that id'});
+      return;
+    }
+    const exercise = exerciseData.get({plain: true});
+    res.render('edit', {
+      exercise, 
+      logged_in: req.session.logged_in,
+      name: req.session.name,
+    });
+  })
+  .catch((err) =>{
+    console.log(err);
+    res.status(500).json(err);
+  });
+  });
+
+
 
 
 

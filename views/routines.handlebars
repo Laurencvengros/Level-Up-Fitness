@@ -14,23 +14,32 @@
         <input class="form-control" id="exercise-reps" name="exercise-reps" class="form-input" />
               
       </div>
+      <div>
       <button type="submit" class="btn btn-primary btn-lg mt-4 mb-4">Add</button>
+      <button class="btn btn-primary btn-lg ml-4"><a class="link-light" href="/profile">Back To profile</a></button>
+      </div>
   </form>
   <div class="card">
     <h5 class="card-header"></h5>
     <div class="card-body">
-      <h5 class="card-title">{{routine.name}}</h5>
+      <div>
+      <h3 class="card-title">{{routine.name}}</h3>
+       <button type="button" id="delete-routine-btn" class="btn btn-primary btn-lg mt-4 mb-4">Delete</button>
+      </div>
       <p class="card-text">
         
             
               {{!-- <h1>{{routine.exercises.name}}</h1> --}}
               {{#each routine.exercises}}
               {{name}}
+              
                 <ul>
                   {{!-- <li>{{name}}</li> --}}
                   <li>Sets: {{sets}}</li>
                   <li>Reps: {{reps}}</li>
                 </ul>
+                 <h4><a class="link" href="/profile/edit/{{id}}">Edit</a></h4>
+                  
               {{/each}}
             
           
@@ -41,3 +50,5 @@
 </div>
 
 <script src="../../js/addExercise.js"></script>
+<script src="../../js/delete-routine.js"></script>
+

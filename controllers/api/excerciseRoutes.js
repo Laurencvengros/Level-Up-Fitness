@@ -41,45 +41,58 @@ router.get('/:id', async (req, res) => {
 });
 
 
+router.put('/:id', async(req,res)=>{
+  try{
+    const updateExercise = await Exercise.update(
+      {
+        name: req.body.name,
+        sets: req.body.sets,
+        reps: req.body.reps,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      },
+    );
+    if(!updateExercise){
+      res.status(404).json({message: 'no exercise with that id'});
+      return;
+    }
+    res.json(updateExercise);
+  }catch(err){
+    res.status(500).json(err);
+  }
+});
 
+router.get ('/', async(req, res) => {
+  try{
+      const exerciseData = await Exercise.findAll({
+          
+      });
+      res.status(200).json(exerciseData);
+  } catch(err){
+      res.status(500).json(err);
+  }
+});
 
+router.delete('/:id', async(req,res) =>{
+  try{
+    const deleteExercise = await Exercise.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+    if(!deleteExercise){
+      res.status(404).json({message: 'no exercise to delete'});
+      return;
+    }
+    res.status(200).json(deleteExercise);
+  }catch(err){
+    res.status(500).json(err);
+  }
+});
 
-// router.get ('/', async(req, res) => {
-//     try{
-//         const exerciseData = await Exercise.findAll({
-            
-//         });
-//         res.status(200).json(exerciseData);
-//     } catch(err){
-//         res.status(500).json(err);
-//     }
-// });
-
-// router.get('/:id', async (req,res)=>{
-//     try{
-//     const exerciseData = await Exercise.findOne({
-//       where: {id: req.params.id},
-
-//       include: [
-//         {
-//           model: Routine,
-//           attributes: [ 'name'],
-//         },
-//         {
-        
-//             model: User,
-//             attributes: ['name']
-//         }
-//       ],
-    
-//     });
-//     res.status(200).json(exerciseData);
-//     }catch(err){
-//       res.status(500).json(err);
-      
-//     }
-  
-      
-//   });
 
   module.exports = router;

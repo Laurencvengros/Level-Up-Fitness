@@ -1,22 +1,23 @@
+
+
 {{#if routines.length}}
 <section>
-    <h2 class="mt-4 ml-4 mb-4">Your Routines</h2>
-    <p class="ml-4 mb-4">Welcome to your profile! Try clicking on a routine to view the exercises associated with your routine.</p>
+    <h2 class="mt-4 ml-4 mb-4">Welcome to your Profile!</h2>
+    <p class="ml-4 mb-4"> Try clicking on a routine to view the exercises associated with your routine.</p>
     {{#each routines as |routine|}}
     {{> profile-info routine}}
+    
     {{/each}}
 
 </section>
 {{/if}}
 
-{{!-- <button type="submit" id="new-routine" class="btn btn-primary btn-lg">Add Another Routine +
-    
-</button> --}}
+
 <br>
 <div>
 <button class="btn btn-primary btn-lg ml-4"><a class="link-light" href="/dashboard">Add Routine +</a></button>
 </div>
  
 
-  
+ 
 
