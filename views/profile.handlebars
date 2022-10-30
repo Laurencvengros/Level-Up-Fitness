@@ -1,9 +1,8 @@
-<h2 class="mt-4 ml-4 mb-4">Welcome to your Profile!</h2>
+<h2 class="profile">Welcome to your Profile!</h2>
 
 {{#if routines.length}}
-<section>
-    
-    <p class="ml-4 mb-4"> Try clicking on a routine to view the exercises associated with your routine.</p>
+<section> 
+    <p class="ml-4 mt-4 mb-4"> Try clicking on a routine to view the exercises associated with your routine.</p>
     {{#each routines as |routine|}}
     {{> profile-info routine}}
     
@@ -12,10 +11,9 @@
 </section>
 {{/if}}
 
-
 <br>
 <div>
-<button class="btn btn-primary btn-lg ml-4"><a class="link-light" href="/dashboard">Add Routine +</a></button>
+<button class="btn btn-lg ml-4"><a class="profile-link" href="/dashboard">Add Routine +</a></button>
 </div>
  
 
