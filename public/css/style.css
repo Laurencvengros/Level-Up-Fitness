@@ -1,3 +1,37 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.jumbotron.jumbotron-fluid {
+    background-color: skyblue;
+}
+
 .jumbotron {
+    color: white;
+}
+
+h3.card-header {
     background: skyblue;
+    color: white;
+}
+
+.btn {
+    color: white;
+    background-color: skyblue;
+}
+
+.navbar-light .navbar-brand {
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    margin-left: 10px;
+}
+
+.nav-link {
+    margin-right: 10px;
+}
+
+label {
+    margin-top: 15px;
 }
