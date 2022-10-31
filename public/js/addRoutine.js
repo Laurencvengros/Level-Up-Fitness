@@ -5,7 +5,7 @@ const newRoutineForm= async function(event){
     
     console.log(routineTitle)
 
-    
+        
         const response = await fetch('/api/routine', {
         
             method: 'POST',
