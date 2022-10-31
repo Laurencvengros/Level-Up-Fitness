@@ -19,33 +19,30 @@
       <button class="btn btn-lg ml-4 mb-4"><a class="back-to-profile" href="/profile">Back To profile</a></button>
       </div>
   </form>
-  <div class="card">
-    <h5 class="card-header"></h5>
-    <div class="card-body">
-      <div>
-      <h3 class="card-title">{{routine.name}}</h3>
-       {{!-- <button type="button" id="delete-routine-btn" class="btn btn-primary btn-lg mt-4 mb-4">Delete</button> --}}
-      </div>
-      <p class="card-text">
-        
-            
-              {{!-- <h1>{{routine.exercises.name}}</h1> --}}
-              {{#each routine.exercises}}
-              {{name}}
-              
+    <div class="card">
+      <h5 class="card-header"></h5>
+        <div class="card-body">
+        <div>
+          <h3 class="card-title">{{routine.name}}</h3>
+              <button type="button" id="delete-routine-btn" class="btn mb-4">Delete</button>
+        </div>
+          <p class="card-text">
+                {{#each routine.exercises}}
+            <div class="card">
+              {{!-- <p class="card-text"> --}}   
+              {{name}} 
+          
                 <ul>
                   {{!-- <li>{{name}}</li> --}}
                   <li>Sets: {{sets}}</li>
                   <li>Reps: {{reps}}</li>
                 </ul>
-                 <button class="btn btn-lg"<h4><a class="link-edit" href="/profile/edit/{{id}}">Edit</a></h4>
-                 <button type="button" id="delete-routine-btn" class="btn btn-lg ml-4">Delete</button>
-                  
+              </div>
+              <button class="btn btn-sm mb-4 edit-button"><h4><a class="link-edit" href="/profile/edit/{{id}}">Edit</a></h4></button>
+
               {{/each}}
-            
-          
-        </p> 
-      
+
+              </p> 
     </div>
   </div>
 </div>

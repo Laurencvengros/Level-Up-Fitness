@@ -73,7 +73,7 @@ h3.card-title {
 }
 
 a.link-edit {
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     padding: 0px;
 }
@@ -81,4 +81,12 @@ a.link-edit {
 p.card-text {
     text-decoration: underline;
     margin-top: 15px;
+}
+
+button.btn.btn-sm.mb-4.edit-button {
+    font-size: 10px;
+}
+
+div.card-body-bullet {
+    margin-left: 30px;
 }
