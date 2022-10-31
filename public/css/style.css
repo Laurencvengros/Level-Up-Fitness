@@ -59,7 +59,7 @@ label {
     margin: 20px;
 }
 
-card-profile {
+.card-profile {
     margin: 20px;
 }
 
@@ -89,4 +89,14 @@ button.btn.btn-sm.mb-4.edit-button {
 
 div.card-body-bullet {
     margin-left: 30px;
+}
+
+#alert{
+    text-align: center;
+    color: skyblue
+}
+
+#alert2{
+    text-align: center;
+    color: skyblue
 }

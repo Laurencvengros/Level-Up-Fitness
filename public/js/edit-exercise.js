@@ -24,6 +24,7 @@ async function editExerciseForm(event){
 
       if(response.ok){
         document.getElementById("alert").innerHTML = "Routine Updated!";
+        document.getElementById("alert2").innerHTML = "you may return to your profile";
         
       }else{
         console.log('error');
