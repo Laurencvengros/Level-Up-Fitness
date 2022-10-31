@@ -10,8 +10,10 @@ router.post('/', async (req,res) =>{
         name: req.body.name,
         user_id: req.session.user_id,
         // user_id: req.params.id,
+      
         
     });
+    
 
     res.status(200).json(newRoutine);
   } catch (err) {
@@ -22,6 +24,7 @@ router.post('/', async (req,res) =>{
 router.get ('/', async(req, res) => {
     try{
         const routineData = await Routine.findAll({
+          
             
         });
         res.status(200).json(routineData);

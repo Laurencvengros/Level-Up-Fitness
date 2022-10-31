@@ -1,10 +1,10 @@
 const sequelize = require('../config/connection');
 const { Exercise, User, Routine } = require('../models');
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 const router = require('express').Router();
 
 
-router.get('/', (req, res) => {
+router.get('/',  withAuth,(req, res) => {
   Routine.findAll({
     where: {
       user_id: req.session.user_id,
