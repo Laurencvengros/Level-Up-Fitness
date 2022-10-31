@@ -1,3 +1,92 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin-left: 20px;
+}
+
+.jumbotron.jumbotron-fluid {
+    background-color: skyblue;
+}
+
 .jumbotron {
+    color: white;
+}
+
+h3.card-header {
     background: skyblue;
+    color: white;
+}
+
+.btn {
+    color: white;
+    background-color: skyblue;
+    margin-top: 15px;
+}
+
+.navbar-light .navbar-brand {
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    margin-left: 10px;
+}
+
+.nav-link {
+    margin-right: 10px;
+}
+
+label {
+    margin-top: 15px;
+}
+
+.profile {
+    background-color: skyblue;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    color: white;
+    padding: .8rem;
+    font-size: 35px;
+}
+
+.profile-link {
+    color: white;
+}
+
+.card-header-profile {
+    margin: 20px;
+}
+
+card-profile {
+    margin: 20px;
+}
+
+a.back-to-profile {
+    color: white;
+}
+
+h3.card-title {
+    font-size: 30px;
+    color: skyblue;
+}
+
+a.link-edit {
+    font-size: 15px;
+    color: white;
+    padding: 0px;
+}
+
+p.card-text {
+    text-decoration: underline;
+    margin-top: 15px;
+}
+
+button.btn.btn-sm.mb-4.edit-button {
+    font-size: 10px;
+}
+
+div.card-body-bullet {
+    margin-left: 30px;
 }
