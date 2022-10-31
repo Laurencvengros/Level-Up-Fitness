@@ -22,7 +22,7 @@ router.get('/', withAuth ,async (req,res)=>{
   const routine = routineData.get({plain : true});
   console.log(routine)
   res.render('dashboard', { routine, logged_in: true,
-    username: req.session.name });
+    name: req.session.name });
   }
  
 });
@@ -47,7 +47,7 @@ router.get('/edit/:id',  (req, res) => {
       res.render('edit-routine', {
         routine,
         logged_in: true,
-        username: req.session.name,
+        name: req.session.name,
       });
     })
     .catch((err) => {
