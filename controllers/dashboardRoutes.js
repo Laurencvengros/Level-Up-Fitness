@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 const router = require('express').Router();
 
 
-router.get('/', async (req,res)=>{
+router.get('/', withAuth ,async (req,res)=>{
   console.log(req.session);
   const routineData = await Routine.findOne({
     where: {
@@ -21,7 +21,8 @@ router.get('/', async (req,res)=>{
   }else{
   const routine = routineData.get({plain : true});
   console.log(routine)
-  res.render('dashboard', { routine });
+  res.render('dashboard', { routine, logged_in: true,
+    username: req.session.name });
   }
  
 });
@@ -41,7 +42,7 @@ router.get('/edit/:id',  (req, res) => {
         return;
       }
 
-      const routine = dbroutineData.get({ plain: true });
+      const routine = routineData.get({ plain: true });
       console.log('sending ' + req.session.name);
       res.render('edit-routine', {
         routine,
