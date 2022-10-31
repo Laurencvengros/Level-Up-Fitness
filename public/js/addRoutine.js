@@ -5,7 +5,7 @@ const newRoutineForm= async function(event){
     
     console.log(routineTitle)
 
-    
+    if(routineTitle){
         const response = await fetch('/api/routine', {
         
             method: 'POST',
@@ -28,7 +28,9 @@ const newRoutineForm= async function(event){
             alert(response.statusText);
             
         }
-    
+    }else{
+        alert('Please enter the name of your routine')
+    }
 };
 
 
