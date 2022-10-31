@@ -23,7 +23,8 @@ async function editExerciseForm(event){
       });
 
       if(response.ok){
-        document.location.replace(`/routine/${id}`);
+        document.getElementById("alert").innerHTML = "Routine Updated!";
+        
       }else{
         console.log('error');
       }
@@ -53,6 +54,7 @@ async function deleteFormHandler(event) {
 
   if (response.ok) {
     document.location.replace(`/profile`)
+    
   } else {
     alert(response.statusText);
   }
