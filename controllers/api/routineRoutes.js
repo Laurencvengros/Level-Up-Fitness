@@ -3,11 +3,17 @@ const { User, Routine, Exercise } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', async (req,res) =>{
+  console.log(req.session)
+  console.log(req.body)
     try{
         const newRoutine = await Routine.create({
         name: req.body.name,
-        user_id: req.session.user_id
+        user_id: req.session.user_id,
+        // user_id: req.params.id,
+      
+        
     });
+    
 
     res.status(200).json(newRoutine);
   } catch (err) {
@@ -18,6 +24,7 @@ router.post('/', async (req,res) =>{
 router.get ('/', async(req, res) => {
     try{
         const routineData = await Routine.findAll({
+          
             
         });
         res.status(200).json(routineData);
@@ -25,6 +32,7 @@ router.get ('/', async(req, res) => {
         res.status(500).json(err);
     }
 });
+
 
 router.get('/:id', async (req,res)=>{
     try{
@@ -55,6 +63,25 @@ router.get('/:id', async (req,res)=>{
     }
   
       
+  });
+
+  router.delete('/:id', async (req, res) => {
+    try {
+      const routineData = await Routine.destroy({
+        where: {
+          id: req.params.id,
+          
+        },
+      });
+      if (!routineData) {
+        res.status(404).json({message: "nothing to delete"});
+        return;
+      }
+  
+      res.status(200).json(routineData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
   });
 
 
