@@ -1,27 +1,54 @@
 # Level Up Fitness
 
-[Deployed Level Up Fitness App ](https://Laurencvengros.github.io/Project_2/ "Level Up Fitness")
+[Deployed Level Up Fitness App ](https://levelup-fitness.herokuapp.com/ "Level Up Fitness")
 
-## User Story:
+## Table-of-Contents
 
-## Purpose:
+1. [Description](#description)
 
-The purpose of this application is to simplify the process of working out
-- Workouts specified by type (Upper Body, Lower Body, Total Body)
+2. [Technology](#technology)
+
+3. [Photos](#photos)
+
+4. [Collaborators](#Collaborators)
 
 
-## Technology used in this project:
+## Description:
 
-- handlebars.js
-- Sequelize
-- Heroku
+The purpose of this application is to simplify the process of tracking your work outs. 
+By signing up or logging in, you can create or modify workouts and review what you have saved from last time.
+-More of what you need, less of what you don't
 
-## Photos of Functionality:
-![Level Up Fitness Application](https://github.com/Laurencvengros/restoftheurl/picture.PNG)
+## Technology:
+
+- RESTful API using Node.js and Express.js
+- Handlebars.js as the template engine
+- MySQL and Sequelize ORM for the database
+- Authentication
+- Deployment to Heroku using MySQL JawsDB
+- dotENV
+
+## Photos:
+- View of the Sign Up Page:
+![Level Up Fitness Sign Up](./assets/images/signup.png)
+
+- View of the Login Page:
+![Level Up Fitness Login](./assets/images/fitnesslogin.png)
+
+- View of the Profile landing page:
+![Level Up Fitness Profile Landing](./assets/images/profile1.png)
+
+- View of Profile with Routine expanded:
+![Level Up Fitness Profile Routines](./assets/images/profile2.png)
+
+- View of Dashboard:
+![Level Up Fitness Dashboard](./assets/images/dashboard.png)
 
 ## Collaborators:
 
-- Lauren Cvengros
-- Michaela Wells
-- Kelsie Szost
-- Ashley Szpanelewski
+This application was developed and deployed by:
+
+- Lauren Cvengros [l.cvengros@icloud.com]
+- Michaela Wells []
+- Kelsie Szost [owner@kelsieszost.design]
+- Ashley Szpanelewski [ashleyszp@gmail.com]
