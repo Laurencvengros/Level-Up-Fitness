@@ -1,6 +1,6 @@
 # Level Up Fitness
 
-[Deployed Level Up Fitness App ](https://levelup-fitness.herokuapp.com/ "Level Up Fitness")
+[Deployed Level Up Fitness App ](https://radiant-falls-27528.herokuapp.com/ "Level Up Fitness")
 
 ## Table-of-Contents
 
