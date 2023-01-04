@@ -6,7 +6,7 @@
 
 1. [Description](#description)
 
-2. [Intallation](#installation)
+2. [Installation](#installation)
 
 2. [Technology](#technology)
 
@@ -34,14 +34,18 @@ By signing up or logging in, you can create or modify workouts and review what y
     ```
     1. enter your SQL password
     2. input source db/schema.sql
-    3. use ecommerce_db
+    3. use fitnessTracker_db
     ```
 
 * Exit mysql by running "quit", then enter:
 
     ```
     1. npm run seed
-    2. npm start or node server.js
+    2. make sure you have a .env file with the structure:
+    `- DB_name='fitnessTracker_db'
+     - DB_USER='root'
+     - DB_PASSWORD='*this should be your personal sql password*'
+    3. npm start or node server.js
     ```
 
 ## Technology:
@@ -77,6 +81,6 @@ By signing up or logging in, you can create or modify workouts and review what y
 This application was developed and deployed by:
 
 - Lauren Cvengros [l.cvengros@icloud.com]
-- Michaela Wells []
+- Michaela Wells [mgwells012@gmail.com]
 - Kelsie Szost [owner@kelsieszost.design]
 - Ashley Szpanelewski [ashleyszp@gmail.com]
