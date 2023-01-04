@@ -4,6 +4,7 @@ const routineData = [
     {
        name: 'Upper Body',
        user_id: 1, 
+       
     },
     {
         name: 'Lower Body',
@@ -13,6 +14,7 @@ const routineData = [
         name: 'Full Body',
         user_id: 3,
     },
+
 ];
 
 const seedRoutine = () => Routine.bulkCreate(routineData);

@@ -1,27 +1,86 @@
 # Level Up Fitness
 
-[Deployed Level Up Fitness App ](https://Laurencvengros.github.io/Project_2/ "Level Up Fitness")
+[Deployed Level Up Fitness App ](https://radiant-falls-27528.herokuapp.com/ "Level Up Fitness")
 
-## User Story:
+## Table-of-Contents
 
-## Purpose:
+1. [Description](#description)
 
-The purpose of this application is to simplify the process of working out
-- Workouts specified by type (Upper Body, Lower Body, Total Body)
+2. [Intallation](#installation)
+
+2. [Technology](#technology)
+
+3. [Photos](#photos)
+
+4. [Collaborators](#Collaborators)
 
 
-## Technology used in this project:
+## Description:
 
-- handlebars.js
-- Sequelize
-- Heroku
+The purpose of this application is to simplify the process of tracking your work outs. 
+By signing up or logging in, you can create or modify workouts and review what you have saved from last time.
+-More of what you need, less of what you don't
 
-## Photos of Functionality:
-![Level Up Fitness Application](https://github.com/Laurencvengros/restoftheurl/picture.PNG)
+## Installation 
+
+* To run this application follow these steps:
+
+    ```
+    1. clone the repository using https or SSH
+    2. add a .env file with the following set-up
+    - DB_NAME='fitnessTracker_db'
+    - DB_USER='root'
+    - DB_PASSWORD='*this needs to be your password for mysql*'
+    3. run npm i
+    ```
+* open mysql2 by using: mysql -u root -p
+
+    ```
+    1. enter your SQL password
+    2. input source db/schema.sql
+    3. input use fitnessTracker_db
+    ```
+
+* Exit mysql by running "quit", then enter:
+
+    ```
+    1. npm run seed
+    2. npm start or node server.js
+    ```
+
+## Technology:
+
+- RESTful API using Node.js and Express.js
+- Handlebars.js as the template engine
+- MySQL and Sequelize ORM for the database
+- Authentication
+- Deployment to Heroku using MySQL JawsDB
+- dotENV
+
+## Photos:
+- View of the Sign Up Page:
+![Level Up Fitness Sign Up](./assets/images/signup.png)
+
+- View of the Login Page:
+![Level Up Fitness Login](./assets/images/fitnesslogin.png)
+
+- View of the Profile landing page:
+![Level Up Fitness Profile Landing](./assets/images/profile1.png)
+
+- View of Profile with Routine expanded:
+![Level Up Fitness Profile Routines](./assets/images/profile2.png)
+
+- View of Dashboard:
+![Level Up Fitness Dashboard](./assets/images/dashboard.png)
+
+- Entity Relationship Diagram (ERD):
+![Level Up Fitness ERD](./assets/images/dbdiagram.png)
 
 ## Collaborators:
 
-- Lauren Cvengros
-- Michaela Wells
-- Kelsie Szost
-- Ashley Szpanelewski
+This application was developed and deployed by:
+
+- Lauren Cvengros [l.cvengros@icloud.com]
+- Michaela Wells [mgwells012@gmail.com]
+- Kelsie Szost [owner@kelsieszost.design]
+- Ashley Szpanelewski [ashleyszp@gmail.com]

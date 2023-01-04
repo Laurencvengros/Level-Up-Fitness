@@ -1,0 +1,52 @@
+{{!-- <div id=" exerciseData" data-id="{{routine.id}}"></div> --}}
+  <input type="hidden" id="routine_id" value="{{routine.id}}"/>
+<div>
+  <h3 class="card-header ml-4 mt-4">Create a New Exercise</h3>
+  <p class="mt-4 ml-4">Build your custom routine and track your progress by creating an exercise.</p>
+  <form id="exercise-form" class="ml-4 mt-4">
+      <div class="form-group">
+          
+              <label for="exampleInputName"   class="form-label">Name</label>
+        <input class="form-control" id="exercise-name" name="exercise-name" class="form-input" />
+              <label for="exampleInputName" class="form-label">Sets</label>
+        <input class="form-control" id="exercise-sets" name="exercise-sets" class="form-input" />
+              <label for="exampleInputName" class="form-label">Reps</label>
+        <input class="form-control" id="exercise-reps" name="exercise-reps" class="form-input" />
+              
+      </div>
+      <div>
+      <button type="submit" class="btn btn-lg mb-4">Add Exercise</button>
+      <button class="btn btn-lg ml-4 mb-4"><a class="back-to-profile" href="/profile">Back To profile</a></button>
+      </div>
+  </form>
+    <div class="card">
+      <h5 class="card-header"></h5>
+        <div class="card-body">
+        <div>
+          <h3 class="card-title">{{routine.name}}</h3>
+              <button type="button" id="delete-routine-btn" class="btn mb-4">Delete Routine</button>
+        </div>
+          <p class="card-text">
+                {{#each routine.exercises}}
+            <div class="card">
+              {{!-- <p class="card-text"> --}}   
+              {{name}} 
+          
+                <ul>
+                  {{!-- <li>{{name}}</li> --}}
+                  <li>Sets: {{sets}}</li>
+                  <li>Reps: {{reps}}</li>
+                </ul>
+              </div>
+              <button class="btn btn-sm mb-4 edit-button"><h4><a class="link-edit" href="/profile/edit/{{id}}">Edit</a></h4></button>
+
+              {{/each}}
+
+              </p> 
+    </div>
+  </div>
+</div>
+
+<script src="../../js/addExercise.js"></script>
+<script src="../../js/delete-routine.js"></script>
+

@@ -40,18 +40,26 @@ router.get('/:id', async (req,res)=>{
 });
 
 router.post('/', async (req, res) => {
+  //console.log('logging in user:' + req.body.email);
+  //console.log(req.body);
     try{
-        const newUser = await User.create({
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password
-        });
+      const newUser = await User.create({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
+      });
+        console.log(req.body)
+
+        //const user = newUser.get({plain: true});
         req.session.save(() => {
             req.session.user_id = newUser.id;
             req.session.name = newUser.name;
+            req.session.email = newUser.email;
             req.session.logged_in = true;
             res.status(200).json(newUser);
+            
         });
+        console.log(newUser)
     }catch(err){
         res.status(500).json(err)
     }
@@ -102,6 +110,7 @@ router.post('/login', async (req, res) => {
       res.status(404).end();
     }
   });
+
   
   module.exports = router;
 
